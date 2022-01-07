@@ -16,7 +16,7 @@ let arrayOfAssignments: Assignment[] = [
     {id: 3, assignment: "countCats", score:10, total:10, completed:'true'},
     {id: 4, assignment: "countDogs", score:9, total:10, completed:'true'},
     {id: 5, assignment: "countEl", score:9, total:10, completed:'true'},
-    {id: 6, assignment: "countFunny", score:"na", total:10, completed:'false'}
+    {id: 6, assignment: "countFunny", score:"10", total:10, completed:'false'}
 ];
 let nextId = 7;
 let myAverageScore:any;
@@ -35,8 +35,8 @@ workHome.get("/", (req, res) => {
                 totalPossible = totalPossible + arrayOfAssignments[i].total;
             }
         } 
-        return myAverageScore  = parseFloat(((totalScores / totalPossible) * 100).toFixed(1)) ;
-        console.log(myAverageScore + "%");
+        myAverageScore  = parseFloat(((totalScores / totalPossible) * 100).toFixed(1)) ;
+        return myAverageScore + "%";
     }      
     myAverageScore1();
  
