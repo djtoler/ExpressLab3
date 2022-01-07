@@ -1,10 +1,9 @@
 interface Assignment {
-    id: number
+    id?: number
     assignment: string;
-    score: number | string;
+    score: any;
     total: number;
-    completed: boolean;
-    action: any
+    completed: string;
 }
 
 export default Assignment;

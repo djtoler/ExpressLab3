@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<h1>
+    Assignments
+</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Assignment</th>
+    <th>Score</th>
+    <th>Total</th>
+    <th>Completed</th>
+    <th>Actions</th>
+  </tr>
+
+  {{#each arrayOfAssignments}}
+  <tr>
+    <td>{{id}}</td> 
+    <td>{{assignment}}</td> 
+    <td>{{score}}</td> 
+    <td>{{total}}</td>
+    <td>{{#if completed}}
+      &check;
+      {{/if}}
+    </td>
+    <td>
+      <a href="/editwork/players/edit/{{id}}">Edit</a>
+      <a href="/players/{{id}}/deleteCon">Delete</a>
+    </td>
+  </tr>
+  {{/each}}
+</table>
+
+
+<p>Overall Average: {{myAverageScore}} </p>
+<p><a href="http://localhost:8787/addWork">Add an Assignment</a></p>
