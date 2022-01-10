@@ -10,6 +10,10 @@ const array = require('./workHome')
 const deleteWork = express.Router();
 
 workHome.get("/players/:id/delete", (req, res) => {
+    console.log(arrayOfAssignments);
+    console.log(array.arrayOfAssignments);
+    
+    
     const url = req.url;
     const id = parseInt(req.params.id);
     if (url == `/players/${id}/delete`) {
@@ -18,9 +22,9 @@ workHome.get("/players/:id/delete", (req, res) => {
             i++;
             if (i !== id) continue;
             res.render('deleteWork', {
-                assignment:array.arrayOfAssignments[i-1].assignment
+                assignment:arrayOfAssignments[i-1].assignment
             });
-            array.arrayOfAssignments.splice(i-1, 1);
+            arrayOfAssignments.splice(i-1, 1);
         }
     }   
 });
